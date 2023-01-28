@@ -7,18 +7,15 @@ def guess():
     print("Welcome to the Number Guessing Game!")
     print("I am thinking of a number between 1 and 100.")
     level = input("Choose the difficulty level. Type 'easy' or 'hard': ")
-    if level not in ['easy', 'hard']:
-        should_continue = input("Psttt.... Incorrect difficulty level. Type 'y' to lcontinue with easy leve and 'n' to quit.: ")
-        attempt = 10
-    elif level == 'easy':
-        attempt = 10
-    elif level == 'hard':
+    if level == 'hard':
         attempt = 5
+    else:
+        attempt = 10
 
     number = random.randint(1,100)
     #print(number)
 # Allow the player to submit a guess for a number between 1 and 100.
-    while attempt != 0 and should_continue == 'y':
+    while attempt != 0:
         print(f"You have {attempt} attempts remaining to guess the number.")
         guess = int(input("Make a guess: "))
         if guess == number:
